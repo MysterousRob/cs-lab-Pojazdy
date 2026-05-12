@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary1.Interfaces
 {
-    internal interface IPojazdWodny
+    public interface IPojazdWodny
     {
         double Wypornosc { get; set; }
         double MinSzybkoscWodna => 1;

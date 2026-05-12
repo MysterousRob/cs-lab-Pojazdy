@@ -8,6 +8,8 @@ namespace ClassLibrary1.Vehicles
     public class Samolot : Pojazd, IPojazdLadowy, IPojazdPowietrzny
     {
         public int LiczbaKol { get; set; }
+        public double MinSzybkoscPowietrzna => 20;
+        public double MaxSzybkoscPowietrzna => 900;
 
         public Samolot(string nazwa, int kola, double moc, TypPaliwa paliwo) 
             : base(nazwa, Srodowisko.Ladowe)
@@ -36,7 +38,10 @@ namespace ClassLibrary1.Vehicles
         public override void Zwolnij(double wartosc)
         {
             AktualnaSzybkosc = Math.Max(0, AktualnaSzybkosc - wartosc);
-            if (AktualnaSzybkosc < 100) AktualneSrodowisko = Srodowisko.Ladowe;
+            if (AktualnaSzybkosc < MinSzybkoscPowietrzna)
+            {
+                AktualneSrodowisko = Srodowisko.Ladowe;
+            }
         }
     }
 }

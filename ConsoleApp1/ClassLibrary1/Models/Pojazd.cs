@@ -9,7 +9,7 @@ namespace ClassLibrary1.Models
         public double AktualnaSzybkosc { get; protected set; }
         public bool CzySiePorusza { get; protected set; }
         public Srodowisko AktualneSrodowisko { get; protected set; }
-        public Silnik Silnik { get; protected set; }
+        public Silnik? Silnik { get; protected set; }
 
         protected Pojazd(string nazwa, Srodowisko startowe)
         {
